@@ -12,4 +12,5 @@ public interface IUserWorkDAO {
     public User_WorkStation findById(long id);
 
     public List<User_WorkStation> findAll();
+
 }

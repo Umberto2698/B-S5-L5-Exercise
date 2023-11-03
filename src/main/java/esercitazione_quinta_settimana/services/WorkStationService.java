@@ -2,10 +2,11 @@ package esercitazione_quinta_settimana.services;
 
 import esercitazione_quinta_settimana.dao.IWorkStationDAO;
 import esercitazione_quinta_settimana.enteties.WorkStation;
+import esercitazione_quinta_settimana.enums.WorkStation_Type;
 import esercitazione_quinta_settimana.exceptions.ItemNotFoundException;
+import esercitazione_quinta_settimana.repositories.WorkStationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import esercitazione_quinta_settimana.repositories.WorkStationRepository;
 
 import java.util.List;
 
@@ -37,5 +38,10 @@ public class WorkStationService implements IWorkStationDAO {
     public List<WorkStation> findAll() {
         return workStationRepo.findAll();
 
+    }
+
+    @Override
+    public List<WorkStation> findByType(WorkStation_Type workStationType) {
+        return workStationRepo.findByWorkStationType(workStationType);
     }
 }

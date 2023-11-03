@@ -8,9 +8,8 @@ import esercitazione_quinta_settimana.enteties.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Order(1)
 public class AddUsersAndBuildings implements CommandLineRunner {
     @Autowired

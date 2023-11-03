@@ -1,6 +1,7 @@
 package esercitazione_quinta_settimana.dao;
 
 import esercitazione_quinta_settimana.enteties.WorkStation;
+import esercitazione_quinta_settimana.enums.WorkStation_Type;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface IWorkStationDAO {
     public WorkStation findById(long id);
 
     public List<WorkStation> findAll();
+
+    public List<WorkStation> findByType(WorkStation_Type workStationType);
 }

@@ -5,8 +5,10 @@ import enums.WorkStation_Type;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Random;
+import java.util.Set;
 
 @Entity
 @Table(name = "work_stations")
@@ -25,6 +27,11 @@ public class WorkStation {
     private WorkStation_Type workStationType;
     @Column(name = "capacity")
     private int capacity;
+    @OneToMany(mappedBy = "workStation")
+    private Set<User_WorkStation> userWork = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "building_id")
+    private Building building;
 
     public void setDescription(String description) {
         this.description = description;

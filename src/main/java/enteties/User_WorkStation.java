@@ -1,10 +1,7 @@
 package enteties;
 
 import com.github.javafaker.Faker;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -26,6 +23,13 @@ public class User_WorkStation {
 
     @Column(name = "booking_date")
     private LocalDate bookingDate = LocalDate.now();
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "work_station_id")
+    private WorkStation workStation;
 
     public static class UserWorkBuilder {
         private Faker faker = new Faker(Locale.ITALY);

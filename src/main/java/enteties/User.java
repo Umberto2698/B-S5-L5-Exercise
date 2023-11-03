@@ -1,14 +1,13 @@
 package enteties;
 
 import com.github.javafaker.Faker;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Random;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -26,6 +25,8 @@ public class User {
     private String surname;
     @Column(name = "email")
     private String email;
+    @OneToMany(mappedBy = "user")
+    private Set<User_WorkStation> userWork = new HashSet<>();
 
     public void setName(String name) {
         this.name = name;

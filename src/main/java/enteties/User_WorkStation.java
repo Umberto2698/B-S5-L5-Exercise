@@ -31,6 +31,10 @@ public class User_WorkStation {
     @JoinColumn(name = "work_station_id")
     private WorkStation workStation;
 
+    public void setBookingDate(LocalDate bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
     public static class UserWorkBuilder {
         private Faker faker = new Faker(Locale.ITALY);
         private LocalDate bookingDate = faker.date().between(Date.from(LocalDate.of(2023, 1, 1).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()),

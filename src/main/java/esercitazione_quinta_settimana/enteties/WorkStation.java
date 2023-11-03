@@ -1,7 +1,7 @@
-package enteties;
+package esercitazione_quinta_settimana.enteties;
 
 import com.github.javafaker.Faker;
-import enums.WorkStation_Type;
+import esercitazione_quinta_settimana.enums.WorkStation_Type;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,7 +30,7 @@ public class WorkStation {
     @OneToMany(mappedBy = "workStation")
     private Set<User_WorkStation> userWork = new HashSet<>();
     @ManyToOne
-    @JoinColumn(name = "building_id")
+    @JoinColumn(name = "building_id", nullable = false)
     private Building building;
 
     public void setDescription(String description) {
@@ -45,9 +45,14 @@ public class WorkStation {
         this.capacity = capacity;
     }
 
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
+
     public static class WorkSationBuilder {
         private Faker faker = new Faker(Locale.ITALY);
+        private long id = new Random().nextLong(1000000000000L, 10000000000000L);
         private String description = faker.lorem().fixedString(30);
-        private int caoacity = new Random().nextInt(5, 100);
+        private int capacity = new Random().nextInt(5, 100);
     }
 }

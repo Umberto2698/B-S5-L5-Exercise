@@ -1,13 +1,14 @@
-package services;
+package esercitazione_quinta_settimana.services;
 
-import dao.IBuildingDAO;
-import enteties.Building;
-import exceptions.ItemNotFoundException;
+import esercitazione_quinta_settimana.dao.IBuildingDAO;
+import esercitazione_quinta_settimana.enteties.Building;
+import esercitazione_quinta_settimana.exceptions.ItemNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.BuildingRepository;
+import esercitazione_quinta_settimana.repositories.BuildingRepository;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class BuildingService implements IBuildingDAO {
@@ -15,8 +16,9 @@ public class BuildingService implements IBuildingDAO {
     private BuildingRepository buildingRepo;
 
     @Override
-    public void save(Building building) {
+    public void save(Building building) throws InterruptedException {
         buildingRepo.save(building);
+        TimeUnit.MILLISECONDS.sleep(500);
         System.err.println("Edificio salvato correttamente!");
     }
 

@@ -1,11 +1,11 @@
-package dao;
+package esercitazione_quinta_settimana.dao;
 
-import enteties.Building;
+import esercitazione_quinta_settimana.enteties.Building;
 
 import java.util.List;
 
 public interface IBuildingDAO {
-    public void save(Building building);
+    public void save(Building building) throws InterruptedException;
 
     public void findByIdAndDelete(long id);
 

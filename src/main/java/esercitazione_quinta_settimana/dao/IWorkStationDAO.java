@@ -1,6 +1,6 @@
-package dao;
+package esercitazione_quinta_settimana.dao;
 
-import enteties.WorkStation;
+import esercitazione_quinta_settimana.enteties.WorkStation;
 
 import java.util.List;
 

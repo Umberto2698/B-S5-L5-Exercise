@@ -1,6 +1,6 @@
-package repositories;
+package esercitazione_quinta_settimana.repositories;
 
-import enteties.Building;
+import esercitazione_quinta_settimana.enteties.Building;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package enteties;
+package esercitazione_quinta_settimana.enteties;
 
 import com.github.javafaker.Faker;
 import jakarta.persistence.*;
@@ -42,6 +42,7 @@ public class User {
 
     public static class UserBuilder {
         private Faker faker = new Faker(Locale.ITALY);
+        private long id = new Random().nextLong(1000000000000L, 10000000000000L);
         private String name = faker.name().firstName();
         private String surname = faker.name().lastName();
         private String email = "www." + name + surname + "@gmail.com";

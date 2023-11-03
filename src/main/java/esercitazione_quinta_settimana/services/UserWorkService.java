@@ -1,11 +1,11 @@
-package services;
+package esercitazione_quinta_settimana.services;
 
-import dao.IUserWorkDAO;
-import enteties.User_WorkStation;
-import exceptions.ItemNotFoundException;
+import esercitazione_quinta_settimana.dao.IUserWorkDAO;
+import esercitazione_quinta_settimana.enteties.User_WorkStation;
+import esercitazione_quinta_settimana.exceptions.ItemNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.UserWorkRepository;
+import esercitazione_quinta_settimana.repositories.UserWorkRepository;
 
 import java.util.List;
 

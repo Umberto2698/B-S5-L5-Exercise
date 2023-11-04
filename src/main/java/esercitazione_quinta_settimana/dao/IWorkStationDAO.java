@@ -15,4 +15,8 @@ public interface IWorkStationDAO {
     public List<WorkStation> findAll();
 
     public List<WorkStation> findByType(WorkStation_Type workStationType);
+
+    public List<WorkStation> findByCity(String city);
+
+    public List<WorkStation> findByTypeAndCity(WorkStation_Type workStationType, String city);
 }

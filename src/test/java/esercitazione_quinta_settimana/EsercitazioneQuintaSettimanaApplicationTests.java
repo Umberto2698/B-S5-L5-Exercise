@@ -21,4 +21,16 @@ class EsercitazioneQuintaSettimanaApplicationTests {
         List<WorkStation> workStations = wDAO.findByType(WorkStation_Type.PRIVATE);
         assertEquals(8, workStations.size());
     }
+
+    @Test
+    void findWorkStationByCity() {
+        List<WorkStation> workStations = wDAO.findByCity("Borgo");
+        assertEquals(4, workStations.size());
+    }
+
+    @Test
+    void findWorkStationByTypeAndCity() {
+        List<WorkStation> workStations = wDAO.findByTypeAndCity(WorkStation_Type.OPENSPACE, "Settimo");
+        assertEquals(12, workStations.size());
+    }
 }

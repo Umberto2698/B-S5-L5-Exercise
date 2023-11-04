@@ -44,4 +44,14 @@ public class WorkStationService implements IWorkStationDAO {
     public List<WorkStation> findByType(WorkStation_Type workStationType) {
         return workStationRepo.findByWorkStationType(workStationType);
     }
+
+    @Override
+    public List<WorkStation> findByCity(String city) {
+        return workStationRepo.getWorkStationFromCityIgnoreCase(city);
+    }
+
+    @Override
+    public List<WorkStation> findByTypeAndCity(WorkStation_Type workStationType, String city) {
+        return workStationRepo.getWorkStationFromCity(workStationType, city);
+    }
 }
